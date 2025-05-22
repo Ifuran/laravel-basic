@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +16,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/profile', function () {
+    return "Selamat datang di halaman profile";
+});
+
+Route::get('/user/{userId}/post/{postId?}', function (Request $request) {
+    return "User Id " . $request->userId . "memiliki postingan dengan Post Id " . $request->postId;
 });

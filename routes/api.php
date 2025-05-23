@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\PostController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -24,3 +25,5 @@ Route::get("/posts/{postId}", [PostController::class, "findOne"]);
 Route::post("/posts", [PostController::class, "insertOne"]);
 Route::put("/posts/{postId}", [PostController::class, "updateOne"]);
 Route::delete("/posts/{postId}", [PostController::class, "deleteOne"]);
+
+Route::get("/comments", [CommentController::class, "findAll"]);
